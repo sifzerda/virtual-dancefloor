@@ -1,0 +1,257 @@
+/* Import Google fonts - Josefin+Sans, Outfit, Source Code Pro, Rubik, Jersey 10, Space Grotesk */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Rubik+Mono+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+  --blue: #2684ff;
+  --lblue: #4f9bff;
+  --light-blue: #87f7f1;
+  --volt: #c8ff00;
+  --dark-blue: #000102;
+  --yellow: #e5dc15;
+  --dark-yellow: #c2bb11;
+  --bootstrap-dark: #212529;
+  --bootstrap-lighter: #364459;
+  --bootstrap-lightest: #96a4b3;
+  --cyan: #01fff7;
+  --light-red: #ff3859;
+  --gold: #ffc107;
+  --creepy-green: #9cffd9;
+  --creepy-green2:  #cefff4;
+  --midnight: rgb(8, 29, 88);
+  --flame: #ff3300;
+  --flame2: #e5ff00;
+  --flame3: #ff5e00;
+  --asteroid-canvas: #15151F;
+}
+
+#root {
+  width: 100%;
+  max-width: 100%; /* Prevent content from exceeding the screen width */
+  margin: 0 auto; /* Center root container */
+  overflow: hidden; /* Avoid unintended overflows */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.main-content {
+  flex: 1; /* Take remaining space */
+  padding-bottom: 30px; /* Space for footer */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Ensure the entire page fills the viewport */
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Main content of the page */
+#root, .main-content {
+  flex: 1; /* Allows content to grow and push the footer down */
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1; /* Take remaining space */
+  padding-bottom: 30px; /* Space for footer */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* -------------------------------- header ------------------------------- */
+
+header {
+  background-color: #222; /* Optional: Customize */
+  color: white; /* Optional: Customize */
+  padding: 20px 0;
+  text-align: center;
+}
+
+/* ------------------- nav tabs -----------------------*/
+
+.nav-tabs {
+  display: flex;
+  width: 100%;
+}
+
+.right-username {
+  margin-left: auto; /* Pushes this item to the right side */
+}
+
+.nav-tabs .nav-link.active {
+  color: #fff; /* Change text color */
+  background-color: #007bff; /* Highlight background color */
+  border-radius: 5px; /* Add rounded corners */
+  font-weight: bold; /* Make text bold */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Add subtle text shadow */
+}
+
+.nav-tabs .nav-link {
+  color: #007bff; /* Default text color */
+  background-color: transparent; /* Default background */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.nav-tabs .nav-link:hover {
+  background-color: #e7f1ff; /* Hover effect */
+  color: #0056b3; /* Hover text color */
+}
+
+/* --------------------- footer -----------------------*/
+
+footer {
+  background-color: #222; /* Optional: Customize */
+  color: white; /* Optional: Customize */
+  padding: 20px 0;
+  margin-top: auto; /* Push the footer to the bottom */
+  text-align: center;
+}
+
+/* --------------------- sign up -----------------------*/
+
+/* General container styles */
+.container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background: linear-gradient(135deg, #e8f4f8, #fdfdfd);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Back to Login Link */
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.back-link:hover {
+  color: #0056b3;
+}
+
+/* Title styles */
+.login-title {
+  font-size: 2rem;
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Form group styles */
+.form-group-z {
+  margin-bottom: 20px;
+}
+
+.label-z {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.input-z {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-z:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+  outline: none;
+}
+
+/* Input when focused */
+.input-z.focused {
+  border-color: #007bff;
+}
+
+/* Submit button styles */
+.button-container-z {
+  text-align: center;
+}
+
+.submit-button-z {
+  background: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.submit-button-z:hover {
+  background: #0056b3;
+}
+
+.submit-button-z:active {
+  background: #004085;
+}
+
+.submit-button-z:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+/* ----------------------------------------------------------------------- */
+
+
+
+
+/* ----------------------------------------------------------------------- */
+
+
+
+
+
+/* ----------------------------------------------------------------------- */
+
+
+
+
+
+/* ----------------------------------------------------------------------- */
+
+
+
+
+
+/* ----------------------------------------------------------------------- */
+
+
+
+
+
+/* ----------------------------------------------------------------------- */
