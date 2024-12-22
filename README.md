@@ -116,6 +116,7 @@ Optimization:
   + [ ] Like profiles,
   + [ ] Match profiles
 + [ ] Live Messaging
++ [ ] Improve GUI/css
 
 ## (10) Support
 
