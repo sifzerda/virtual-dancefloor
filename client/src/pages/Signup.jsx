@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom'; // Import useNavigate
 import { useMutation } from '@apollo/client';
 import Auth from '../utils/auth';
 import { ADD_USER } from '../utils/mutations';
@@ -7,9 +7,9 @@ import { ADD_USER } from '../utils/mutations';
 function Signup() {
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
   const [addUser, { error }] = useMutation(ADD_USER);
-
   const [inputFocus, setInputFocus] = useState(false);
   const [formError, setFormError] = useState('');
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -22,6 +22,9 @@ function Signup() {
       const token = mutationResponse.data.addUser.token;
       Auth.login(token);
       console.log('User logged in successfully.');
+
+      // Redirect to the profile creation page
+      navigate('/create');
     } catch (err) {
       console.error('Error in signup:', err);
       if (err.message.includes('username')) {

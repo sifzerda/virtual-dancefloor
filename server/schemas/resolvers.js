@@ -68,6 +68,17 @@ const resolvers = {
     },
 
 
+
+    likeUser: async (_, { userId }, { user }) => {
+      if (!user) throw new Error('Not authenticated');
+      const liker = await User.findById(user.id);
+      const likedUser = await User.findById(userId);
+      liker.likes.push(likedUser);
+      await liker.save();
+      return liker;
+    },
+
+
   },
 };
 

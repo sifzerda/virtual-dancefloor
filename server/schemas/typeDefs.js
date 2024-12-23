@@ -1,10 +1,13 @@
 const typeDefs = `
 
   type User {
-    _id: ID
-    username: String
-    email: String
-    password: String
+    id: ID!
+    username: String!
+    email: String!
+    age: Int
+    gender: String
+    bio: String
+    likes: [User]
   }
 
   type Auth {
@@ -23,6 +26,7 @@ const typeDefs = `
     updateUser(username: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
     removeUser: User
+    likeUser(userId: ID!): User
   }
 `;
 

@@ -21,6 +21,32 @@ const userSchema = new Schema({
     minlength: 5
   },
 
+  age: {
+    type: Number,
+    required: false,
+    min: 18, // Assuming minimum age requirement is 18
+  },
+  gender: {
+    type: String,
+    enum: ['Male', 'Female', 'Non-Binary', 'Other'],
+    required: false,
+  },
+  bio: {
+    type: String,
+    maxlength: 500, // Limit the bio length
+    default: '',
+  },
+  likes: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User', // Reference other User documents
+    },
+  ],
+  createdAt: {
+    type: Date,
+    default: Date.now,
+  },
+
 });
 
 // set up pre-save middleware to create password
