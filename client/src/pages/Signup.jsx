@@ -6,16 +6,32 @@ import { ADD_USER } from '../utils/mutations';
 
 function Signup() {
   const [formState, setFormState] = useState({ username: '', email: '', password: '' });
-  const [addUser] = useMutation(ADD_USER);
+  const [addUser, { error }] = useMutation(ADD_USER);
+
   const [inputFocus, setInputFocus] = useState(false);
+  const [formError, setFormError] = useState('');
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    const mutationResponse = await addUser({
-      variables: { ...formState },
-    });
-    const token = mutationResponse.data.addUser.token;
-    Auth.login(token);
+
+    try {
+      const mutationResponse = await addUser({
+        variables: { ...formState },
+      });
+
+      const token = mutationResponse.data.addUser.token;
+      Auth.login(token);
+      console.log('User logged in successfully.');
+    } catch (err) {
+      console.error('Error in signup:', err);
+      if (err.message.includes('username')) {
+        setFormError('Username already exists. Please choose another.');
+      } else if (err.message.includes('email')) {
+        setFormError('Email is already registered. Please use another.');
+      } else {
+        setFormError('Signup failed. Please try again.');
+      }
+    }
   };
 
   const handleChange = (event) => {
