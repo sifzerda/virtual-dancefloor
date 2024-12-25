@@ -173,3 +173,34 @@ Neo4j: For managing relationships and matching logic.
 Notifications
 OneSignal: For push notifications on mobile apps.
 Firebase Cloud Messaging (FCM): Cross-platform push notifications
+
+
+
+
+//////////
+
+Pre-made accounts:
+
+```bash
+
+Username: xandro
+email: xandro@aol.com
+Password: password
+
+Username:
+email:  
+Password: password
+
+Username:
+email:  
+Password: password
+
+Username:
+email:  
+Password: password
+
+
+```
+
+////////////
+
